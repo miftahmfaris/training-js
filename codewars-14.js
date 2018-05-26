@@ -2,10 +2,12 @@ function duplicateEncode(word) {
   // ...
   // result = word.replace(/[a-zA-Z0-9\s\@&\/\\#,+()$~%.'":*?<>{}]/g, "(");
   array = [];
+  firstArr = word[0];
   for (var i = 0; i < word.length; i++) {
-    console.log(array.indexOf(word[i]));
-    if (array.indexOf(word[i]) == -1) {
-      array.push(word[i]);
+    for (var j = 1; j < word.length; j++) {
+      if (word[i] != word[j]) {
+        array.push("(");
+      }
     }
   }
 
